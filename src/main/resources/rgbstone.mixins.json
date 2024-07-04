@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "net.noobie.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"ExampleMixin",
+		"RedstoneViewMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
