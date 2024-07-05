@@ -1,8 +1,10 @@
 package net.noobie.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -23,9 +25,10 @@ public class ModBlocks {
                         "rgbstone:bluestone_wire"
                 ),
                 new BluestoneWireBlock(
-                        FabricBlockSettings.copyOf(
-                                Blocks.REDSTONE_WIRE
-                        )
+                        AbstractBlock.Settings.create()
+                                .noCollision()
+                                .breakInstantly()
+                                .pistonBehavior(PistonBehavior.DESTROY)
                 )
         );
 
